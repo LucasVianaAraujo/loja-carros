@@ -22,10 +22,6 @@ export default function Home() {
         setResultado(Resultado)
     }
 
-    useEffect(() => {
-        CalcularParcelas()
-    }, [])
-
     function Enviar(e) {
         if (e.key === 'Enter') {
             CalcularParcelas()
@@ -49,7 +45,7 @@ export default function Home() {
                         <label>Parcelas:</label>
                         <input type="text" onKeyUp={Enviar} value={parcelas} onChange={e => setParcelas(e.target.value)} />
                         <button onClick={CalcularParcelas}>Calcular</button>
-                        <h2>Parcelas de {resultado ? resultado : '...'}</h2>
+                        <h2>Parcelas de R${resultado ? resultado : '...'}</h2>
                     </div>
                 </div>
             </div>
